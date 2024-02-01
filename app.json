@@ -13,11 +13,11 @@
     "env": {
         "API_ID": {
             "description": "22609670",
-            "required": true
+            "22609670": true
         },
         "API_HASH": {
             "description": "3506d8474ad1f4f5e79b7c52a5c3e88d",
-            "required": true
+            "3506d8474ad1f4f5e79b7c52a5c3e88d": true
         },
         "BOT_TOKEN": {
             "description": "",
@@ -25,10 +25,10 @@
         },
         "OWNER_ID": {
             "description": "5987970971",
-            "required": true
+            "5987970971": true
         },
         "SUDO_USERS": {
-            "description": "-1002070057679",
+            "-1002070057679": "-1002070057679",
             "required": true
         }
     },
