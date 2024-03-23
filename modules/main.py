@@ -180,8 +180,7 @@ async def account_login(bot: Client, m: Message):
             elif 'd26g5bnklkwsh4.cloudfront.net' in url:
              id =  url.split("/")[-2]
              url =  "https://psitoffers.store/testkey.php?vid=" + id + "&quality=" + raw_text2
-            elif 'iframe.mediadelivery.net' in url:
-	     id =  url.split("/")[-2]    
+            elif 'iframe.mediadelivery.net' in url:    
              url = f"{API_BASE_URL}{url}" + /ping?hash=13892ac0903f805449a8dcbe781f896e&time=300&paused=false&resolution=720
 		    
 
