@@ -23,7 +23,7 @@ from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-API_BASE_URL = "https://extractapi.vercel.app/classplus?link=","https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}"
+API_BASE_URL = "https://extractapi.vercel.app/classplus?link=",
 
 bot = Client(
     "bot",
@@ -180,7 +180,6 @@ async def account_login(bot: Client, m: Message):
             elif 'd26g5bnklkwsh4.cloudfront.net' in url:
              id =  url.split("/")[-2]
              url =  "https://psitoffers.store/testkey.php?vid=" + id + "&quality=" + raw_text2
-            elif 'iframe.mediadelivery.net' in url:
 		    
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
