@@ -181,8 +181,7 @@ async def account_login(bot: Client, m: Message):
              id =  url.split("/")[-2]
              url =  "https://psitoffers.store/testkey.php?vid=" + id + "&quality=" + raw_text2
             elif 'iframe.mediadelivery.net' in url:
-             id =  url.split("/")[-2]
-             url =  "https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}" + id + "&quality=" + raw_text2
+             url =  "https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}"
 		    
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
