@@ -23,7 +23,7 @@ from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-API_BASE_URL = "https://extractapi.vercel.app/classplus?link="
+API_BASE_URL = "https://extractapi.vercel.app/classplus?link=","https://iframe.mediadelivery.net"
 
 bot = Client(
     "bot",
