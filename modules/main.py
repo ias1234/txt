@@ -192,8 +192,23 @@ async def account_login(bot: Client, m: Message):
                 u=v["manifest_url"]
                 url=u.split("video/")[1].split("/")[0]
                 url=u.replace(url, url.split(",")[-2])
-            elif '/master.mpd' in url:
+	    if "acecwply" in url:
+                cmd = f'yt-dlp -o "{name}.%(ext)s" -f "bestvideo[height<={raw_text2}]+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv --no-warning "{url}"'
+            elif "player.vimeo" in url:
+                cmd = f'yt-dlp -f "{ytf}+bestaudio" --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
+	    elif '/master.mpd' in url:
              id =  url.split("/")[-2]
+	    elif raw_text0 in "sure60":
+                y1= url.replace("/", "%2F")
+#                 rout = f"https://onlinetest.sure60.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.sure60.com%2Flivehttporigin%2F{y[49:-14]}%2Fmaster.m3u8"
+                rout =f"https://onlinetest.sure60.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.sure60.com%2F{y1[32:-14]}%2Fmaster.m3u8"
+                getstatusoutput(f'curl "{rout}" -c "cookie.txt"')
+                cook = "cookie.txt"            
+            elif raw_text0 in "theoptimistclasses":
+                y= url.replace("/", "%2F")
+                rout=f"https://live.theoptimistclasses.com/?route=common/ajax&mod=liveclasses&ack=getcustompolicysignedcookiecdn&stream=https%3A%2F%2Fvodcdn.theoptimistclasses.com%2F{y[44:-14]}%2Fmaster.m3u8"
+                getstatusoutput(f'curl "{rout}" -c "cookie.txt"')              
+                cook = "cookie.txt"
 	    elif "webvideos.classplusapp." in url:
               cmd = f'yt-dlp --add-header "referer:https://web.classplusapp.com/" --add-header "x-cdn-tag:empty" -f "{ytf}" "{url}" -o "{name}.mp4"'
             else:
