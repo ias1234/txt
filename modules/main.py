@@ -225,15 +225,15 @@ async def account_login(bot: Client, m: Message):
                 getstatusoutput(f'curl "{rout}" -c "cookie.txt"')              
                 cook = "cookie.txt"
 	        
-            elif "webvideos.classplusapp." in url:
-              cmd = f'yt-dlp --add-header "referer:https://web.classplusapp.com/" --add-header "x-cdn-tag:empty" -f "{ytf}" "{url}" -o "{name}.mp4"'
+            elif "webvideos.classplusapp" in url:
+                cmd = f'yt-dlp --add-header "referer:https://web.classplusapp.com/" --add-header "x-cdn-tag:empty" -f "{ytf}" "{url}" -o "{name}.mp4"'
             
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
             
-            elif 'd26g5bnklkwsh4.cloudfront.net' in url:
-             id =  url.split("/")[-2]
-             url =  "https://psitoffers.store/testkey.php?vid=" + id + "&quality=" + raw_text2
+            elif "d26g5bnklkwsh4.cloudfront.net" in url:
+                id =  url.split("/")[-2]
+                url =  "https://psitoffers.store/testkey.php?vid=" + id + "&quality=" + raw_text2
 		    
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
