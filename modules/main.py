@@ -187,7 +187,7 @@ async def account_login(bot: Client, m: Message):
                 
 	        
             elif "iframe.mediadelivery.net" in url:
-            	headers = {'Host': 'iframe.mediadelivery.net', headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate, br','Dnt': '1','Sec-Gpc': '1','Te': 'trailers''Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,}
+            	headers = {'Host': 'iframe.mediadelivery.net', headers = {''user-agent': 'Mobile-Android', 'app-version': '1.4.37.1', 'api-version': '18', 'device-id': '5d0d17ac8b3c9f51', 'device-details': '2848b866799971ca_2848b8667a33216c_SDK-30', 'accept-encoding': 'gzip'}
             	params = (('url', f'{url}'),)
             	response = requests.get('https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}]\n: ', headers=headers, params=params)
             	url = response.json()['url']
