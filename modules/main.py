@@ -37,7 +37,7 @@ keyboard = InlineKeyboardMarkup( [ [
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_textm.chat.id, f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id}) Bruh 👻, I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer :** @GPSC_HACKERBOT\n**Language :** Python\n**Framework :** 🔥 Pyrogram\n\nSend **TXT** File :-", reply_markup=keyboard]
+    editable = await m.reply_text("**ℍɪɪ** ┈━═My Freind═━┈😎\n\n I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me /upload Command And Then Follow Few Steps..")
 
 
 @bot.on_message(filters.command("restart"))
