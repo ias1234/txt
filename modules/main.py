@@ -177,19 +177,6 @@ async def account_login(bot: Client, m: Message):
             elif "iframe.mediadelivery.net" in url:
                   url = f"{https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}  \n: }"
                   url = response.json()['url']
-            
-            elif 'allenplus.allen.ac.in/api/v1' in url:
-                out=subprocess.getoutput(f"yt-dlp {url} --dump-json --skip-download").replace("WARNING: [generic] Falling back on generic information extractor","").strip()
-                out=json.loads(out)
-              try:
-                url=out['url']
-              except KeyError:
-                v=out["formats"]
-                v=list(filter(lambda x:x["protocol"]=="m3u8_native", v))
-                v=list(filter(lambda x:"hls-fastly_skyfire_sep" in x["format_id"], v))[0]
-                u=v["manifest_url"]
-                url=u.split("video/")[1].split("/")[0]
-                url=u.replace(url, url.split(",")[-2])
 	        
             if "acecwply" in url:
                 cmd = f'yt-dlp -o "{name}.%(ext)s" -f "bestvideo[height<={raw_text2}]+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv --no-warning "{url}"'
