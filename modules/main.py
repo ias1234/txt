@@ -187,11 +187,8 @@ async def account_login(bot: Client, m: Message):
                 
 	        
             elif "iframe.mediadelivery.net" in url:
-            	headers = {'Host': 'iframe.mediadelivery.net', headers = {''user-agent': 'Mobile-Android', 'app-version': '1.4.37.1', 'api-version': '18', 'device-id': '5d0d17ac8b3c9f51', 'device-details': '2848b866799971ca_2848b8667a33216c_SDK-30', 'accept-encoding': 'gzip'}
-            	params = (('url', f'{url}'),)
-            	response = requests.get('https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}]\n: ', headers=headers, params=params)
+            	url = f"{https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}]\n: }"
             	url = response.json()['url']
-                pingHeaders = {'Origin': 'https://iframe.mediadelivery.net','Referer': 'https://iframe.mediadelivery.net/','Sec-Fetch-Site': 'same-site'}
                 cmd = f'./{title}.mp4'['ffmpeg', '-i', tsFile, '-c', 'copy', '-bsf:a', 'aac_adtstoasc', mp4File]
             
             elif 'allenplus.allen.ac.in/api/v1' in url:
