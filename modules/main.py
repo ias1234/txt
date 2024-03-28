@@ -192,14 +192,6 @@ async def account_login(bot: Client, m: Message):
             	response = requests.get('https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}]\n: ', headers=headers, params=params)
             	url = response.json()['url']
                 pingHeaders = {'Origin': 'https://iframe.mediadelivery.net','Referer': 'https://iframe.mediadelivery.net/','Sec-Fetch-Site': 'same-site'}
-                mid_idx = player.find('/.drm')
-                start_idx = player.rfind('"', 0, mid_id) + 1
-                end_idx = player.find('/ping', mid_idx)
-                mediadelivery = player[start_idx:end_idx]
-                ping = mediadelivery + '/ping?hash=13892ac0903f805449a8dcbe781f896e&time=300&paused=false&resolution=720'
-                client.get(ping, headers=pingHeaders)
-                activate = mediadelivery + '/activate'
-                client.get(activate, headers=pingHeaders)
                 cmd = f'./{title}.mp4'['ffmpeg', '-i', tsFile, '-c', 'copy', '-bsf:a', 'aac_adtstoasc', mp4File]
             
             elif 'allenplus.allen.ac.in/api/v1' in url:
