@@ -189,7 +189,6 @@ async def account_login(bot: Client, m: Message):
             elif "iframe.mediadelivery.net" in url:
             	url = f"{https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}]\n: }"
             	url = response.json()['url']
-                cmd = f'./{title}.mp4'['ffmpeg', '-i', tsFile, '-c', 'copy', '-bsf:a', 'aac_adtstoasc', mp4File]
             
             elif 'allenplus.allen.ac.in/api/v1' in url:
               out=subprocess.getoutput(f"yt-dlp {url} --dump-json --skip-download").replace("WARNING: [generic] Falling back on generic information extractor","").strip()
