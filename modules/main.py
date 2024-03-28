@@ -206,11 +206,11 @@ async def account_login(bot: Client, m: Message):
             else:
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'
 
-            elif "iframe.mediadelivery.net" in url:
+            elif: "iframe.mediadelivery.net" in url:
                   url = f"{https://iframe.mediadelivery.net/embed/{video_library_id}/{video_id}  \n: }"
                   url = response.json()['url']
             
-            elif 'allenplus.allen.ac.in/api/v1' in url:
+            elif: 'allenplus.allen.ac.in/api/v1' in url:
                 out=subprocess.getoutput(f"yt-dlp {url} --dump-json --skip-download").replace("WARNING: [generic] Falling back on generic information extractor","").strip()
                 out=json.loads(out)
               try:
